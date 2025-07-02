@@ -31,8 +31,99 @@
     </div>
     
     <script>
-        
-        
+    let btn = document.getElementById("new-quote");
+    let quote = document.querySelector(".quote");
+    let person = document.querySelector(".person");
+
+    const quotes = [
+  {
+    quote: "The best way to get started is to quit talking and begin doing.",
+    person: "Walt Disney"
+  },
+  {
+    quote: "Success is not the key to happiness. Happiness is the key to success.",
+    person: "Albert Schweitzer"
+  },
+  {
+    quote: "Don't watch the clock; do what it does. Keep going.",
+    person: "Sam Levenson"
+  },
+  {
+    quote: "Everything you can imagine is real.",
+    person: "Pablo Picasso"
+  },
+  {
+    quote: "Believe you can and you're halfway there.",
+    person: "Theodore Roosevelt"
+  },
+  {
+    quote: "Push yourself, because no one else is going to do it for you.",
+    person: "Unknown"
+  },
+  {
+    quote: "Great things never come from comfort zones.",
+    person: "Unknown"
+  },
+  {
+    quote: "Dream bigger. Do bigger.",
+    person: "Unknown"
+  },
+  {
+    quote: "Do something today that your future self will thank you for.",
+    person: "Sean Patrick Flanery"
+  },
+  {
+    quote: "It's not whether you get knocked down. It's whether you get up.",
+    person: "Vince Lombardi"
+  },
+  {
+    quote: "Work hard in silence. Let success make the noise.",
+    person: "Frank Ocean"
+  },
+  {
+    quote: "If it scares you, it might be a good thing to try.",
+    person: "Seth Godin"
+  },
+  {
+    quote: "Doubt kills more dreams than failure ever will.",
+    person: "Suzy Kassem"
+  },
+  {
+    quote: "You miss 100% of the shots you don't take.",
+    person: "Wayne Gretzky"
+  },
+  {
+    quote: "I never dreamed about success. I worked for it.",
+    person: "Estée Lauder"
+  },
+  {
+    quote: "Start where you are. Use what you have. Do what you can.",
+    person: "Arthur Ashe"
+  },
+  {
+    quote: "The future belongs to those who believe in the beauty of their dreams.",
+    person: "Eleanor Roosevelt"
+  },
+  {
+    quote: "Your time is limited, so don't waste it living someone else's life.",
+    person: "Steve Jobs"
+  },
+  {
+    quote: "Hard work beats talent when talent doesn't work hard.",
+    person: "Tim Notke"
+  },
+  {
+    quote: "Discipline is the bridge between goals and accomplishment.",
+    person: "Jim Rohn"
+  }
+];
+
+btn.addEventListener("click", function() {
+    let random = Math.floor(Math.random() * quotes.length);
+    quote.innerText = quotes[random].quote;
+    person.innerText = quotes[random].person;
+});
+
     </script>
 </body>
 </html>
