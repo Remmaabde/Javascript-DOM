@@ -28,6 +28,16 @@
         openbtn.addEventListener("click", function() {
             modal_container.style.display = "block";
         });
+
+        close_btn.addEventListener("click", function() {
+            modal_container.style.display = "none";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target === modal_container) {
+                modal_container.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
