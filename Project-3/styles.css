@@ -40,3 +40,15 @@ body{
     overflow:hidden;
     transition: all 0.3s ease;
 }
+.accordion .content-container.active .answer{
+    height:150px;
+}
+.accordion .content-container.active .question{
+    font-size:18px;
+    transition:.5s;
+}
+.accordion .content-container.active .question::after{
+    content: '-';
+    transition: all 0.3s ease;
+    font-size:30px;
+}
