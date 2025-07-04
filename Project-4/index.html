@@ -23,5 +23,65 @@
             </button>
         </div>
     </div>
+
+    <script>
+        const startstopbtn = document.getElementById('startstopbtn');
+        const resetbtn = document.getElementById('resetbtn');
+      
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+      
+        let leadingSeconds = 0;
+        let leadingMinutes = 0;
+        let leadingHours = 0;
+      
+        let timeInterval = null;
+        let timeStatus = "stopped"; // ✅ Correct variable name
+      
+        function stopWatch() {
+          seconds++;
+      
+          if (seconds / 60 === 1) {
+            seconds = 0;
+            minutes++;
+      
+            if (minutes / 60 === 1) {
+              minutes = 0;
+              hours++;
+            }
+          }
+      
+          leadingSeconds = seconds < 10 ? "0" + seconds : seconds;
+          leadingMinutes = minutes < 10 ? "0" + minutes : minutes;
+          leadingHours = hours < 10 ? "0" + hours : hours;
+      
+          document.getElementById('timer').innerText =
+            leadingHours + ':' + leadingMinutes + ':' + leadingSeconds;
+        }
+      
+        startstopbtn.addEventListener('click', function () {
+          if (timeStatus === "stopped") {
+            timeInterval = window.setInterval(stopWatch, 1000);
+            startstopbtn.innerHTML = '<i class="fa-solid fa-pause" id="pause"></i>';
+            timeStatus = "started"; // ✅ FIXED: was timerStatus
+          } else {
+            window.clearInterval(timeInterval);
+            startstopbtn.innerHTML = '<i class="fa-solid fa-play" id="play"></i>';
+            timeStatus = "stopped"; // FIXED
+          }
+        });
+      
+        resetbtn.addEventListener('click', function () {
+          window.clearInterval(timeInterval);
+          seconds = 0;
+          minutes = 0;
+          hours = 0;
+          timeStatus = "stopped"; // Reset status too
+          document.getElementById('timer').innerText = "00:00:00";
+          startstopbtn.innerHTML = '<i class="fa-solid fa-play" id="play"></i>'; // ✅ Reset button icon
+        });
+      </script>
+      
 </body>
 </html>
