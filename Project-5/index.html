@@ -15,9 +15,60 @@
         </div>
 
         <div id="task-container">
-            
+
 
         </div>
     </div>
+
+    <script>
+        const addTask = document.getElementById('add-task');
+        const taskContainer = document.getElementById('task-container');
+        const inputTask = document.getElementById('input-task');
+      
+        addTask.addEventListener('click', function () {
+          if (inputTask.value === "") {
+            alert("Please enter a task");
+            return;
+          }
+      
+          // Create a task div
+          let task = document.createElement('div');
+          task.classList.add('task');
+      
+          // Create the list item with the task text
+          let li = document.createElement('li');
+          li.innerText = inputTask.value;
+          task.appendChild(li);
+      
+          // Check button
+          let checkButton = document.createElement('button');
+          checkButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+          checkButton.classList.add('checkTask');
+          task.appendChild(checkButton);
+      
+          // Delete button
+          let deleteButton = document.createElement('button');
+          deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+          deleteButton.classList.add('deleteTask');
+          task.appendChild(deleteButton);
+      
+          // Add the task to the container
+          taskContainer.appendChild(task);
+      
+          // Clear input
+          inputTask.value = "";
+      
+          // Add functionality to check and delete buttons
+          checkButton.addEventListener('click', function () {
+            li.style.textDecoration = "line-through";
+            li.style.color = "gray";
+          });
+      
+          deleteButton.addEventListener('click', function () {
+            task.remove();
+          });
+        });
+      </script>
+      
 </body>
 </html>

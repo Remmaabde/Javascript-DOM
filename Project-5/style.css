@@ -33,4 +33,35 @@ input{
 #add-task:hover{
     background-color:green;
     color:#fff;
+    cursor:pointer;
 }
+#task-container .task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .task li {
+    list-style: none;
+    flex: 1;
+  }
+  
+  .checkTask, .deleteTask {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+  }
+  
+  .checkTask {
+    color: green;
+  }
+  
+  .deleteTask {
+    color: red;
+  }
